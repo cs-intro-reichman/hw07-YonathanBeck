@@ -7,10 +7,11 @@ public class IsSorted {
 
     // Helper recursive function
     private static boolean isSorted(int[] a, int i) {
-        //// Replace the following statement with your code
-        return false; 
+        i++;
+        if(i < a.length && a[i - 1] <= a[i]) return isSorted(a, i);
+        if(i == a.length) return true;
+        return false;
     }
-
     public static void main(String[] args) {
         int[] a = {1, 2, 2, 5};
         System.out.println(isSorted(a)); // true
